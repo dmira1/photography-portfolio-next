@@ -1,5 +1,6 @@
 import './globals.css'
 import Link from 'next/link'
+import Sidebar from './(components)/Sidebar/Sidebar'
 
 export const metadata = {
   title: 'Create Next App',
@@ -14,14 +15,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main>
-          <nav>
-            <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/contact">Contact</Link>
-            <Link href="/portfolio">Portfolio</Link>
-          </nav>
-          {children}
+        <main className="flex h-screen flex-row justify-start">
+          <Sidebar />
+          <div className="bg-primary flex-1 p-4 text-black">
+            {children}
+          </div>
         </main>
       </body>
     </html>
